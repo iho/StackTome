@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hot news</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-mobile">
+        <div class="column is-three-fifths is-offset-one-fifth">
+        <h1 class="title">
+          Hot news 
+        </h1>
+          {% for news_entry in news %}
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-5by3">
+                    <img src="{{ news_entry.image_url }}" alt="{{ news_entry.trend }}">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-4">{{ news_entry.trend }}</p> <small> <time datetime="2016-1-1">{{ news_entry.date }}</time> </small>
+                    </div>
+                  </div>
+
+                  <div class="content">
+                  {{ news_entry.title}}
+                  <br>
+                  <a href="{{ news_entry.link }}">Source</a>
+                  </div>
+                </div>
+              </div>
+              <br>
+          {% endfor %}
+        </div>
+       </div>
+    </div>
+
+  </section>
+  </body>
+</html>
