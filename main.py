@@ -1,6 +1,6 @@
+from aiohttp import web
 import aiohttp_jinja2
 import jinja2
-from aiohttp import web
 
 import utils
 import views
