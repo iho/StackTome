@@ -4,4 +4,4 @@ COPY Pipfile Pipfile.lock /code/
 WORKDIR /code
 RUN pipenv install
 COPY . /code
-CMD pipenv run python main.py
+CMD pipenv run python -u main.py
